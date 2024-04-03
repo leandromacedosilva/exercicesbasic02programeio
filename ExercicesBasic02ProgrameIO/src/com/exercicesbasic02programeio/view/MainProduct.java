@@ -1,3 +1,7 @@
+
+/*Exercicio 02: Este programa exige algumas informacoes de um determinado produto
+ * e no final ele lista as informacoes */
+
 package com.exercicesbasic02programeio.view;
 
 import java.io.PrintStream;
