@@ -5,6 +5,7 @@ public class Product {
 	private String descricao;
 	private float preco;
 	private float quantidade;
+	private float desconto;
 	
 	public Product() {}
 
@@ -26,28 +27,37 @@ public class Product {
 			System.out.printf("TOTAL R$: %.2f ", (this.preco * this.quantidade));
 			}
 		else if(quantidade >= 11 && quantidade <= 20) {
+			//desconto = (this.preco * this.quantidade) * 0.1f;
 			System.out.println("ATENCAO: NESTA COMPRA HOUVE 10% DE DESCONTO.");
 			System.out.println("CODIGO DE BARRAS: " + this.codigoDeBarras);
 			System.out.println("PRODUTO: " + this.descricao);
 			System.out.println("PRECO R$: " + this.preco);
 			System.out.println("QUANTIDADE: " + this.quantidade);
 			System.out.printf("TOTAL R$: %.2f", (this.preco * this.quantidade));
+			System.out.printf("\nTOTAL DESCONTO R$: %.2f", ((this.preco * this.quantidade) * 0.1));
+			System.out.printf("\nTOTAL COM DESCONTO R$: %.2f", (this.preco * this.quantidade - (this.preco * this.quantidade) * 0.1));
 			}
 		else if(quantidade >= 21 && quantidade <= 50) {
+			//desconto = (this.preco * this.quantidade) * 0.2f;
 			System.out.println("ATENCAO: NESTA COMPRA HOUVE 20% DE DESCONTO.");
 			System.out.println("CODIGO DE BARRAS: " + this.codigoDeBarras);
 			System.out.println("PRODUTO: " + this.descricao);
 			System.out.println("PRECO R$: " + this.preco);
 			System.out.println("QUANTIDADE: " + this.quantidade);
-			System.out.printf("TOTAL R$: %.2f", (this.preco * this.quantidade));
+			System.out.printf("TOTAL R$: %.2f", (this.preco * this.quantidade), "\n");
+			System.out.printf("\nTOTAL DESCONTO R$: %.2f", ((this.preco * this.quantidade) * 0.2));
+			System.out.printf("\nTOTAL COM DESCONTO R$: %.2f", (this.preco * this.quantidade  - (this.preco * this.quantidade) * 0.2));
 			}
 		else if(quantidade > 50 ) {
+			//desconto = (this.preco * this.quantidade) * 0.25f;
 			System.out.println("ATENCAO: NESTA COMPRA HOUVE 25% DE DESCONTO.");
 			System.out.println("CODIGO DE BARRAS: " + this.codigoDeBarras);
 			System.out.println("PRODUTO: " + this.descricao);
 			System.out.println("PRECO R$: " + this.preco);
 			System.out.println("QUANTIDADE: " + this.quantidade);
-			System.out.printf("TOTAL R$: %.2f", (this.preco * this.quantidade));
+			System.out.printf("TOTAL R$: %.2f", (this.preco * this.quantidade), "\n");
+			System.out.printf("\nTOTAL DESCONTO R$: %.2f", ((this.preco * this.quantidade) * 0.25));
+			System.out.printf("\nTOTAL COM DESCONTO R$: %.2f", (this.preco * this.quantidade  - (this.preco * this.quantidade) * 0.25));
 			}
 	}
 
@@ -81,6 +91,16 @@ public class Product {
 
 	public void setQuantidade(float quantidade) {
 		this.quantidade = quantidade;
+	}
+	
+	
+
+	public float getDesconto() {
+		return desconto;
+	}
+
+	public void setDesconto(float desconto) {
+		this.desconto = desconto;
 	}
 
 	@Override

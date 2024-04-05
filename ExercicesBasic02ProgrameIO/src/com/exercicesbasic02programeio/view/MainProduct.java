@@ -25,8 +25,10 @@ public class MainProduct {
 		pst.print("QUANTIDADE: ");
 		float quantidade = input.nextFloat();
 		pst.println();
+		
 		pst.println("INFORMACOES DA COMPRA/VENDA");
 		pst.println("-------------------------------------------------------------------");
+		
 		Product product = new Product(codigoDeBarras, descricao, preco, quantidade);
 		product.productPrinter();
 		
